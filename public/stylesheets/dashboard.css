@@ -1,0 +1,26 @@
+body{margin:0;padding:0;background:#fff;font:12px "Helvetica Neue Light",Helvetica,Arial,sans-serif}
+.scroll{overflow:auto;height:100%;display:block}
+header{position:relative;z-index:1000;background:-webkit-gradient(linear, left top, left bottom, color-stop(0.01, #999), color-stop(0.01, #444), color-stop(1, #111));background:-webkit-linear-gradient(top, #999 1px, #444 1px, #111 100%);background:-moz-linear-gradient(top, #999 1px, #444 1px, #111 100%);background:-o-linear-gradient(top, #999 1px, #444 1px, #111 100%);background:-ms-linear-gradient(top, #999 1px, #444 1px, #111 100%);background:linear-gradient(top, #999 1px, #444 1px, #111 100%);color:#fff;height:40px;width:100%;}
+header h1{height:40px;line-height:40px;margin:0 0 0 20px}
+#sidebar{position:fixed;width:250px;top:40px;bottom:101px;background:#ecedf2;border-right:1px solid #c1c5d0}
+#library{position:fixed;top:40px;left:251px;bottom:101px;right:0;width:auto;}
+#library .scroll{overflow-y:scroll;position:fixed;width:auto;top:81px;left:251px;bottom:101px;right:0;height:auto}
+#library-header{border-bottom:1px solid #858b97;}
+#library-header li{background:#dfe0e5}
+#library-header span{font-weight:bold;border-color:#c2c3c9;color:#777986}
+#tracks{border-top:1px solid #dcdddf}
+.list{margin:0;padding:0;display:table;width:100%;}
+.list li{cursor:pointer;list-style:none;display:table-row;height:40px;line-height:40px;width:100%;}
+.list li span{display:table-cell;padding:0 6px;border-right:1px solid #ddd;text-shadow:#fff 0 1px 0;font-size:12px;-o-text-overflow:ellipsis;text-overflow:ellipsis}
+.list li .track-title{width:50%}
+.list li .track-artist{width:50%}
+.list li.track{color:#2e2f34;}
+.list li.track span{border-bottom:1px solid #e4e4e4;border-top:1px solid #f9f9f9}
+.list li.track:first-child span{border-top:none}
+.list li.track:last-child span{border-bottom:none}
+.list li.track:hover{background:rgba(79,125,236,0.08)}
+.list li.track:nth-child(2n-1){background:#f2f3f7}
+.list li.track:nth-child(2n){background:#fff}
+.list li.track.selected,.list li.track.selected:nth-child(2n),.list li.track.selected:nth-child(2n-1),.list li.track:active{background:#4f7dec;}
+.list li.track.selected span,.list li.track.selected:nth-child(2n) span,.list li.track.selected:nth-child(2n-1) span,.list li.track:active span{border-color:#2658d3;border-right-color:#4570d2;color:#fff;text-shadow:#2c43e1 0 1px 0}
+footer{position:absolute;bottom:0;right:0;left:0;z-index:1001;height:101px;border-top:1px solid #727579;width:100%;background:#000}

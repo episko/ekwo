@@ -1,0 +1,16 @@
+{
+  "name": "ekwo",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node app"
+  },
+  "dependencies": {
+    "express": "3.0.3",
+    "jade": "*",
+    "stylus": "*",
+    "nib": "*",
+    "dbox": "0.5.5",
+    "id3": "0.0.2"
+  }
+}

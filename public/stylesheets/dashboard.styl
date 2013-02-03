@@ -1,0 +1,173 @@
+@import 'nib'
+
+/*
+ *
+ * Variables
+ * NOTE: (put this in its own file afterwards)
+ *
+ */
+
+/*
+ * Sizes
+ */
+
+$header_height    = 40px
+$footer_height    = 101px
+$sidebar_width    = 250px
+// Due to border
+$sidebar_full_width  = $sidebar_width + 1px
+$track_row_height    = 40px
+$track_header_height = $track_row_height + 1px
+
+/*
+ * Colors
+ */
+
+$header_fg_color             = #fff
+$library_header_font_color   = #777986
+$library_header_border_color = #858b97
+$tracks_border_color         = #dcdddf
+$track_row_pair_bg_color     = #fff
+$track_row_impair_bg_color   = #f2f3f7
+$track_selection_bg_color    = #4f7dec
+$sidebar_bg_color            = #ecedf2
+$sidebar_border_color        = #c1c5d0
+$footer_bg_color             = #000
+
+// Markup
+
+body
+  margin: 0
+  padding: 0
+  background: #FFF
+  font: 12px "Helvetica Neue Light", Helvetica, Arial, sans-serif
+
+.scroll
+  overflow: auto
+  height: 100%
+  display: block
+
+header
+  position: relative
+  z-index: 1000
+  background: linear-gradient(top, 1px #999, 1px #444, 100% #111);
+  color: $header_fg_color
+  height: $header_height
+  width: 100%
+
+  h1
+    height: $header_height
+    line-height: $header_height
+    margin: 0 0 0 20px
+
+#sidebar
+  position: fixed
+  width: $sidebar_width
+  top: $header_height
+  bottom: $footer_height
+  background: $sidebar_bg_color
+  border-right: 1px solid $sidebar_border_color
+
+#library
+  position: fixed
+  top: $header_height
+  left: $sidebar_full_width
+  bottom: $footer_height
+  right: 0
+  width: auto
+
+  .scroll
+    overflow-y: scroll
+    position: fixed
+    width: auto
+    top: $header_height + $track_header_height
+    left: $sidebar_full_width
+    bottom: $footer_height
+    right: 0
+    height: auto
+
+#library-header
+  border-bottom: 1px solid $library_header_border_color
+
+  li
+    background: #dfe0e5
+
+  span
+    font-weight: bold
+    border-color: #c2c3c9
+    color: $library_header_font_color
+
+#tracks
+  border-top: 1px solid $tracks_border_color
+
+.list
+  margin: 0
+  padding: 0
+  display: table
+  width: 100%
+
+  li
+    cursor: pointer
+    list-style: none
+    display: table-row
+    height: $track_row_height
+    line-height: $track_row_height
+    width: 100%
+
+    span
+      display: table-cell
+      padding: 0 6px
+      border-right: 1px solid #DDD
+      text-shadow: #fff 0 1px 0;
+      font-size: 12px
+      text-overflow: ellipsis
+
+    .track-title
+      width: 50%
+
+    .track-artist
+      width: 50%
+
+  li.track
+    color: #2e2f34
+
+    span
+      border-bottom: 1px solid #e4e4e4
+      border-top: 1px solid #f9f9f9
+
+    &:first-child
+      span
+        border-top: none
+
+    &:last-child
+      span
+        border-bottom: none
+
+    &:hover
+      background: rgba($track_selection_bg_color, .08)
+
+    &:nth-child(2n-1)
+      background: $track_row_impair_bg_color
+
+    &:nth-child(2n)
+      background: $track_row_pair_bg_color
+
+  li.track.selected, li.track.selected:nth-child(2n), li.track.selected:nth-child(2n-1), li.track:active
+    background: $track_selection_bg_color
+
+    span
+      border-color: #2658d3
+      border-right-color: #4570d2
+      color: #FFF
+      text-shadow: #2c43e1 0 1px 0;
+
+footer
+  position: absolute
+  bottom: 0
+  right: 0
+  left: 0
+  z-index: 1001
+  height: $footer_height
+  border-top: 1px solid #727579
+  width: 100%
+  background: $footer_bg_color
